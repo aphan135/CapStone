@@ -49,8 +49,8 @@ void DonationManager::printDonationsByDonor() const {
 
     while (current != nullptr) {
         cout << "Donor Name: " << current->data.getDonorName() 
-            << "/n College Code: " << current->data.getCollegeCode() 
-            << "/n Amount: " << current->data.getAmount() << endl;
+            << endl << "College Code: " << current->data.getCollegeCode() 
+            << endl << "Amount: " << current->data.getAmount() << endl;
         current = current->next;
     }
 }
