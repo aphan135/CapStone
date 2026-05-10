@@ -1,6 +1,6 @@
 /*
-    Phan, Aaron (team leader?)
-    Cao, Aaron
+    Cao, Aaron (team leader)
+    Phan, Aaron
     Do, Adam
 
     Spring 2026
