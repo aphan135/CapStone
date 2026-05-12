@@ -19,17 +19,17 @@ void CollegeList::addCollege(const std::string& code, const std::string& name) {
 }
 
 std::string CollegeList::getCollegeName(const std::string& code) const {
-    const auto it = colleges.find(code);
-    if (it != colleges.end()) {
-        return it->second;
+    auto iter = colleges.find(code);
+    if (iter != colleges.end()) {
+        return iter->second;
     }
     return "";
 }
 
 void CollegeList::printColleges() const {
-    for (const auto& [code, name] : colleges) {
-        std::cout << code << " " << name << std::endl;
-    }
+    for (auto iter = colleges.begin(); iter != colleges.end(); ++iter) {
+        cout << iter->first << ": " << iter->second << endl;
+	}
 }
 
 const std::map<std::string, std::string>& CollegeList::getColleges() const {

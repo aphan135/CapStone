@@ -3,5 +3,14 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Project1/Project1.vcxproj" />
+  <Folder Name="/Solution Items/">
+    <File Path="Project1/CollegeList.h" />
+    <File Path="Project1/Donation.h" />
+    <File Path="Project1/DonationList.cpp" />
+    <File Path="Project1/DonationList.h" />
+    <File Path="Project1/DonationManager.h" />
+    <File Path="Project1/DonationManger.cpp" />
+    <File Path="Project1/FileLoader.h" />
+  </Folder>
+  <Project Path="Project1/Project1.vcxproj" Id="841acac6-722a-40b0-8745-1b9e5aece5e7" />
 </Solution>

@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{841ACAC6-722A-40B0-8745-1B9E5AECE5E7}|Project1\\Project1.vcxproj|C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\Donation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{841ACAC6-722A-40B0-8745-1B9E5AECE5E7}|Project1\\Project1.vcxproj|solutionrelative:Project1\\Donation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\Donation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:Project1\\Donation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{841ACAC6-722A-40B0-8745-1B9E5AECE5E7}|Project1\\Project1.vcxproj|C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{841ACAC6-722A-40B0-8745-1B9E5AECE5E7}|Project1\\Project1.vcxproj|solutionrelative:Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{841ACAC6-722A-40B0-8745-1B9E5AECE5E7}|Project1\\Project1.vcxproj|C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationManger.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{841ACAC6-722A-40B0-8745-1B9E5AECE5E7}|Project1\\Project1.vcxproj|solutionrelative:Project1\\DonationManger.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:Project1\\DonationManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:Project1\\DonationList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{841ACAC6-722A-40B0-8745-1B9E5AECE5E7}|Project1\\Project1.vcxproj|C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationList.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{841ACAC6-722A-40B0-8745-1B9E5AECE5E7}|Project1\\Project1.vcxproj|solutionrelative:Project1\\DonationList.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Donation.cpp",
+              "DocumentMoniker": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\Donation.cpp",
+              "RelativeDocumentMoniker": "Project1\\Donation.cpp",
+              "ToolTip": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\Donation.cpp",
+              "RelativeToolTip": "Project1\\Donation.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-12T01:31:49.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\main.cpp",
+              "RelativeDocumentMoniker": "Project1\\main.cpp",
+              "ToolTip": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\main.cpp",
+              "RelativeToolTip": "Project1\\main.cpp",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-12T01:25:22.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Donation.h",
+              "DocumentMoniker": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\Donation.h",
+              "RelativeDocumentMoniker": "Project1\\Donation.h",
+              "ToolTip": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\Donation.h",
+              "RelativeToolTip": "Project1\\Donation.h",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-11T21:35:30.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DonationManager.h",
+              "DocumentMoniker": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationManager.h",
+              "RelativeDocumentMoniker": "Project1\\DonationManager.h",
+              "ToolTip": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationManager.h",
+              "RelativeToolTip": "Project1\\DonationManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-11T21:35:26.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DonationList.h",
+              "DocumentMoniker": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationList.h",
+              "RelativeDocumentMoniker": "Project1\\DonationList.h",
+              "ToolTip": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationList.h",
+              "RelativeToolTip": "Project1\\DonationList.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-11T21:35:19.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DonationManger.cpp",
+              "DocumentMoniker": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationManger.cpp",
+              "RelativeDocumentMoniker": "Project1\\DonationManger.cpp",
+              "ToolTip": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationManger.cpp",
+              "RelativeToolTip": "Project1\\DonationManger.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-11T21:33:03.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DonationList.cpp",
+              "DocumentMoniker": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationList.cpp",
+              "RelativeDocumentMoniker": "Project1\\DonationList.cpp",
+              "ToolTip": "C:\\Users\\aaron\\Downloads\\projects\\CapStone\\Project1\\Project1\\DonationList.cpp",
+              "RelativeToolTip": "Project1\\DonationList.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-11T21:32:42.776Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
