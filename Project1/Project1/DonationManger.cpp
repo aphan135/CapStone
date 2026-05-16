@@ -11,6 +11,9 @@
 
 #include "DonationManager.h"
 #include <iostream>
+#include <iomanip>
+#include <sstream>
+#include <vector>
 
 using namespace std;
 
@@ -39,8 +42,16 @@ void DonationManager::printDonationsByCollege() const {
     const map<string, string>& collegeMap = colleges.getColleges();
 
     for (const auto& pair : collegeMap) {
-        double total = getCollegeTotal(pair.first);
-        cout << pair.first << " " << total << endl;
+        cout << "\t" <<pair.first << " - " << pair.second << endl;
+
+        DonationNode* current = donations.getFirst();
+        while (current != nullptr) {
+            if (current->data.getCollegeCode() == pair.first) {
+                cout << "\t\t" << current->data.getDonorName() << " | Amount: $"
+                    << current->data.getAmount() << endl;
+            }
+            current = current->next;
+        }
     }
 }
 
@@ -48,9 +59,8 @@ void DonationManager::printDonationsByDonor() const {
     DonationNode* current = donations.getFirst();
 
     while (current != nullptr) {
-        cout << "Donor Name: " << current->data.getDonorName() 
-            << endl << "College Code: " << current->data.getCollegeCode() 
-            << endl << "Amount: " << current->data.getAmount() << endl;
+        cout << current->data.getDonorName() 
+        << " | Amount: $" << current->data.getAmount() << endl;
         current = current->next;
     }
 }
@@ -59,7 +69,8 @@ void DonationManager::printTotalsByCollege() const {
     const map<string, string>& collegeMap = colleges.getColleges();
 
     for (const auto& pair : collegeMap) {
-        cout << pair.first << " " << getCollegeTotal(pair.first) << endl;
+        cout << "\t" << pair.first << " - " << pair.second
+            << "\n\t\tTotal donation amount: $" << getCollegeTotal(pair.first) << endl;
     }
 }
 
@@ -94,18 +105,24 @@ void DonationManager::printHighestDonor() const {
 void DonationManager::printCollegeWithHighestTotal() const {
     const map<string, string>& collegeMap = colleges.getColleges();
 
-    string bestCollege = "";
+    vector<string> bestCollege;
+    vector<string> bestCollegeCode;
     double bestAmount = -1;
 
     for (const auto& pair : collegeMap) {
         double total = getCollegeTotal(pair.first);
         if (total > bestAmount) {
             bestAmount = total;
-            bestCollege = pair.first;
+            bestCollege.push_back(pair.first);
+            bestCollegeCode.push_back(pair.second);
         }
     }
 
-    cout << bestCollege << " " << bestAmount << endl;
+	cout << "\t College(s) with the highest total donation:\n";
+	for (size_t i = 0; i < bestCollege.size(); ++i) {
+        cout << "\t\t" << bestCollegeCode[i] << " (" << bestCollege[i] << ')' << endl;
+	}
+    cout << "\t\tHighest total received: $" << bestAmount << "\n\n";
 }
 
 double DonationManager::getDonorTotal(const string& donorName) const {
