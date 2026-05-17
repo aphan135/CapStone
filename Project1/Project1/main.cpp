@@ -17,6 +17,7 @@
 #include "DonationList.h"
 #include "DonationManager.h"
 #include "FileLoader.h"
+#include "Menu.h"
 
 using namespace std;
 
@@ -202,6 +203,8 @@ int main()
     cout << "\n===== All tests completed. =====\n";
 
     cout << endl;
-    system("Pause");
+
+    displayMenu();
+    processUserChoices(manager);
     return 0;
 }

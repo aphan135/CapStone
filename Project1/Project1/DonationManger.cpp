@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <sstream>
 #include <vector>
+#include <cctype>
 
 using namespace std;
 
@@ -24,11 +25,16 @@ int DonationManager::addDonor(const string& donorName) {
     return donorPerson.getDonorID();
 }
 
-void DonationManager::addCollege(const string& collegeCode, const string& collegeName) {
+void DonationManager::addCollege(string collegeCode, const string& collegeName) {
     colleges.addCollege(collegeCode, collegeName);
 }
 
-void DonationManager::addDonation(const string& donorName, const string& collegeCode, double amount) {
+void DonationManager::addDonation(const string& donorName, string collegeCode, double amount) {
+    for (char& c : collegeCode) {
+        if (islower(c)) {
+            c = toupper(c);
+        }
+    }
     addDonor(donorName);
     Donation donorPerson(donorName, collegeCode, amount);
     donations.addDonation(donorPerson);
@@ -82,9 +88,9 @@ void DonationManager::printTotalsByDonor() const {
 }
 
 void DonationManager::printStatistics() const {
-    cout << donors.size() << endl;
-    cout << colleges.getColleges().size() << endl;
-    cout << donations.getNumOfDonations() << endl;
+    cout << "\tNumber of donors: " << donors.size() << endl;
+    cout << "\tNumber of colleges: " << colleges.getColleges().size() << endl;
+    cout << "\tNumber of donations: " << donations.getNumOfDonations() << "\n\n";
 }
 
 void DonationManager::printHighestDonor() const {
@@ -111,7 +117,13 @@ void DonationManager::printCollegeWithHighestTotal() const {
 
     for (const auto& pair : collegeMap) {
         double total = getCollegeTotal(pair.first);
-        if (total > bestAmount) {
+        if (total == bestAmount) {
+            bestAmount = total;
+            bestCollege.push_back(pair.first);
+            bestCollegeCode.push_back(pair.second);
+        } else if (total > bestAmount) {
+            bestCollege.clear();
+            bestCollegeCode.clear();
             bestAmount = total;
             bestCollege.push_back(pair.first);
             bestCollegeCode.push_back(pair.second);

@@ -11,10 +11,16 @@
 
 #include "CollegeList.h"
 #include <iostream>
+#include <cctype>
 
 using namespace std;
 
-void CollegeList::addCollege(const std::string& code, const std::string& name) {
+void CollegeList::addCollege(std::string code, const std::string& name) {
+    for (char &c : code) {
+        if (islower(c)) {
+            c = toupper(c);
+        }
+	}
     colleges[code] = name;
 }
 
@@ -28,8 +34,9 @@ std::string CollegeList::getCollegeName(const std::string& code) const {
 
 void CollegeList::printColleges() const {
     for (auto iter = colleges.begin(); iter != colleges.end(); ++iter) {
-        cout << iter->first << ": " << iter->second << endl;
+        cout << "\t" << iter->first << " - " << iter->second << endl;
 	}
+    cout << endl;
 }
 
 const std::map<std::string, std::string>& CollegeList::getColleges() const {
