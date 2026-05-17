@@ -35,7 +35,6 @@ void DonationManager::addDonation(const string& donorName, string collegeCode, d
             c = toupper(c);
         }
     }
-    addDonor(donorName);
     Donation donorPerson(donorName, collegeCode, amount);
     donations.addDonation(donorPerson);
 }
@@ -65,8 +64,17 @@ void DonationManager::printDonationsByDonor() const {
     DonationNode* current = donations.getFirst();
 
     while (current != nullptr) {
-        cout << current->data.getDonorName() 
-        << " | Amount: $" << current->data.getAmount() << endl;
+        std::string donorName = current->data.getDonorName();
+        int donorId = -1;
+        for (const auto& donor : donors) {
+            if (donor.getDonorName() == donorName) {
+                donorId = donor.getDonorID();
+                break;
+            }
+        }
+        cout << "\tID " << donorId << " - " << donorName << endl 
+            << "\t\t" << colleges.getCollegeName(current->data.getCollegeCode()) << " (" << current->data.getCollegeCode() << ")" << endl
+            << "\t\tAmount: $" << current->data.getAmount() << endl;
         current = current->next;
     }
 }

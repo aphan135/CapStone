@@ -64,11 +64,14 @@ void processUserChoices(DonationManager& manager) {
 				cout << "Enter donor name: ";
 				cin.ignore();
 				getline(cin, donorName);
-				cout << "Enter college code: ";
+				int newID = manager.addDonor(donorName);
+				cout << "\n\t >>> New Donor ID: " << newID << endl;
+				cout << "\nEnter college code: ";
 				cin >> collegeCode;
 				cout << "Enter donation amount: ";
 				cin >> amount;
 				manager.addDonation(donorName, collegeCode, amount);
+				cout << "\n\t >>> Donation added.\n\n";
 				system("Pause");
 				displayMenu();
 				break;
