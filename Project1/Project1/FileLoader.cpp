@@ -77,7 +77,7 @@ void loadDonationsFromFile(const string& fileName,
 
             if (!donorName.empty() && !collegeCode.empty() && !amountStr.empty())
             {
-                const int amount = stoi(amountStr);
+                const double amount = stod(amountStr);
                 manager.addDonation(donorName, collegeCode, amount);
             }
         }
