@@ -38,6 +38,8 @@ void displayMenu() {
 // Definition of function processUserChoices
 // Your code here...
 void processUserChoices(DonationManager& manager) {
+	displayMenu();
+	
 	bool exit = false;
 	while (!exit) {
 		int choice;
