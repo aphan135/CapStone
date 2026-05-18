@@ -128,6 +128,7 @@ void processUserChoices(DonationManager& manager) {
 				break;
 			}
 			case 0:{
+				cout << ">>>Logging out...\n\n";
 				exit = true;
 				break;
 			default:
