@@ -34,15 +34,26 @@ void DonationManager::addCollege(string collegeCode, const string& collegeName)
 
 void DonationManager::addDonation(const string& donorName, string collegeCode, double amount) 
 {
-    for (char& c : collegeCode) {
-        if (islower(c)) {
+	int donorID = addDonor(donorName);
+    for (char& c : collegeCode) 
+	{
+        if (islower(c)) 
+		{
             c = toupper(c);
         }
     }
     Donation donorPerson(donorName, collegeCode, amount);
     donations.addDonation(donorPerson);
 }
-
+void DonatioManager::addDonation(const int donorID, std::string collegeCode, double amount)
+{
+	for (char& c : collegeCode) 
+	{
+        if (islower(c)) 
+		{
+            c = toupper(c);
+        }
+    }
 void DonationManager::printColleges() const 
 {
 	const auto& collegeMap = colleges.getColleges();
