@@ -14,7 +14,8 @@
 DonationList::DonationList()
     : first(nullptr), last(nullptr), numOfDonations(0) {}
 
-void DonationList::addDonation(const Donation& donation) {
+void DonationList::addDonation(const Donation& donation) 
+{
     DonationNode* newNode = new DonationNode(donation);
 
     if (first == nullptr) {
@@ -29,19 +30,23 @@ void DonationList::addDonation(const Donation& donation) {
     numOfDonations = numOfDonations + 1;
 }
 
-int DonationList::getNumOfDonations() const {
+int DonationList::getNumOfDonations() const 
+{
     return numOfDonations;
 }
 
-DonationNode* DonationList::getFirst() const {
+DonationNode* DonationList::getFirst() const 
+{
     return first;
 }
 
-DonationNode* DonationList::getLast() const {
+DonationNode* DonationList::getLast() const 
+{
     return last;
 }
 
-DonationList::~DonationList() {
+DonationList::~DonationList() 
+{
     DonationNode* current = first;
 
     while (current != nullptr) {
