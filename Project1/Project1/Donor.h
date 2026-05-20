@@ -14,7 +14,8 @@
 
 #include <string>
 
-class Donor {
+class Donor 
+{
 	public:
 		Donor(const std::string& aDonorName, int aDonorID)
 			: donorName(aDonorName), donorId(aDonorID) {}
