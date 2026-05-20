@@ -146,8 +146,7 @@ void DonationManager::printStatistics() const
 void DonationManager::printHighestDonor() const 
 {
     double bestAmount = -1.0;
-	double bestAmount = -1;
-for (const auto& donor : donors) {
+	for (const auto& donor : donors) {
     double total = getDonorTotal(donor.getDonorName());
     if (total > bestAmount) {
         bestAmount = total;
@@ -162,7 +161,8 @@ for (const auto& donor : donors)
         cout << "\t" << donor.getDonorName() << "\n";
     }
 }
-cout << "\tHighest amount donated: $" << bestAmount << endl;}
+cout << "\tHighest amount donated: $" << bestAmount << endl;
+}
 
 void DonationManager::printCollegeWithHighestTotal() const 
 {
