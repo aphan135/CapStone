@@ -30,5 +30,4 @@ private:
 	std::string collegeCode;
 	double amount;
 };
-
 #endif
