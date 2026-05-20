@@ -14,7 +14,8 @@
 
 #include <string>
 
-class Donation {
+class Donation 
+{
 public:
 	Donation(const std::string& aDonorName,
 		const std::string& aCollegeCode, double anAmount)
