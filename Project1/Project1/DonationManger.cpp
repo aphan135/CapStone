@@ -145,21 +145,28 @@ void DonationManager::printStatistics() const
 
 void DonationManager::printHighestDonor() const 
 {
-    double bestAmount = -1;
-    for (const auto& donor : donors) {
+    double bestAmount = -1.0;
+	std::vector<std::string> highestDonors;
+	highestDonors.reverse(donors.size());
+    for (const auto& donor : donors) 
+	{
         double total = getDonorTotal(donor.getDonorName());
-        if (total > bestAmount) {
+        if (total > bestAmount) 
+		{
             bestAmount = total;
+			highestDonors.clear();
+			highestDonors.push_back(donor.getDonorName());
+        }
+		else if (total == bestAmount && bestAmount > 0) 
+        {
+            highestDonors.push_back(donor.getDonorName());
         }
     }
 
     cout << "Highest donor(s):\n";
     for (const auto& donor : donors) 
 	{
-        if (getDonorTotal(donor.getDonorName()) == bestAmount) 
-		{
-            cout << "\t" << donor.getDonorName() << "\n";
-        }
+        cout << "\t" << name << "\n";
     }
     cout << "\tHighest amount donated: $" << bestAmount << endl;
 }
@@ -170,7 +177,7 @@ void DonationManager::printCollegeWithHighestTotal() const
 
     vector<string> bestCollege;
     vector<string> bestCollegeCode;
-    double bestAmount = -1;
+    double bestAmount = -1.0;
 
     for (const auto& pair : collegeMap) 
 	{
