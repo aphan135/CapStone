@@ -15,17 +15,18 @@
 #include <string>
 
 class Donor {
-public:
-	Donor(const std::string& aDonorName, int aDonorID)
-		: donorName(aDonorName), donorId(aDonorID) {}
+	public:
+		Donor(const std::string& aDonorName, int aDonorID)
+			: donorName(aDonorName), donorId(aDonorID) {}
 
-	std::string getDonorName() const;
-	int getDonorID() const;
+		std::string getDonorName() const;
+		int getDonorID() const;
 
-	bool operator<(const Donor& other) const;
-private:
-	std::string donorName;
-	int donorId;
+		bool operator<(const Donor& other) const;
+
+	private:
+		std::string donorName;
+		int donorId;
 };
 
 #endif
