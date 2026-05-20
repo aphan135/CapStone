@@ -175,8 +175,9 @@ void DonationManager::printCollegeWithHighestTotal() const
 {
     const map<string, string>& collegeMap = colleges.getColleges();
 
-    vector<string> bestCollege;
-    vector<string> bestCollegeCode;
+    vector<string> highestColleges;
+	highestColleges.reverse(collegeMap.size());
+
     double bestAmount = -1.0;
 
     for (const auto& pair : collegeMap) 
