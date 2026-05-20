@@ -11,13 +11,10 @@
 
 #include "DonationList.h"
 
-using namespace std;
-
 DonationList::DonationList()
-    : first(nullptr), last(nullptr), numOfDonations(0) {
-}
+    : first(nullptr), last(nullptr), numOfDonations(0) {}
 
-int DonationList::addDonation(const Donation& donation) {
+void DonationList::addDonation(const Donation& donation) {
     DonationNode* newNode = new DonationNode(donation);
 
     if (first == nullptr) {
@@ -30,7 +27,6 @@ int DonationList::addDonation(const Donation& donation) {
     }
 
     numOfDonations = numOfDonations + 1;
-    return numOfDonations;
 }
 
 int DonationList::getNumOfDonations() const {
@@ -56,5 +52,4 @@ DonationList::~DonationList() {
 
     first = nullptr;
     last = nullptr;
-    numOfDonations = 0;
 }
