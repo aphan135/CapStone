@@ -13,7 +13,6 @@
 #define DONATIONLIST_H
 
 #include "Donation.h"
-#include <string>
 
 struct DonationNode {
 	Donation data;
@@ -26,10 +25,10 @@ struct DonationNode {
 class DonationList {
 public:
 	DonationList();
-	int addDonation(const Donation& donation);
-	int getNumOfDonations() const;
 	
-	//Getters
+	int addDonation(const Donation& donation);
+	
+	int getNumOfDonations() const;
 	DonationNode* getFirst() const;
 	DonationNode* getLast() const;
 	
@@ -40,5 +39,4 @@ private:
 	DonationNode* last;
 	int numOfDonations;
 };
-
 #endif
