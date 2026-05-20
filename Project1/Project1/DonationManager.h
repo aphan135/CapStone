@@ -28,7 +28,7 @@ public:
     DonationManager() : nextDonorID(START_ID) {}
 
     int addDonor(const std::string& donorName);
-    void addCollege(std::string collegeCode, const std::string& collegeName);
+    void addCollege(const std::string& collegeCode, const std::string& collegeName);
     void addDonation(const std::string& donorName, std::string collegeCode, double amount);
 	void addDonation(const int donorID, std::string collegeCode, double amount);
 
