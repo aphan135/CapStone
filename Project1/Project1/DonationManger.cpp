@@ -47,7 +47,7 @@ void DonationManager::printColleges() const
 {
 	const auto& collegeMap = colleges.getColleges();
     
-	for(const auto& pair: collegeMAP)
+	for(const auto& pair: collegeMap)
 		{
 			pair.first;
 		}
