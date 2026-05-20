@@ -15,24 +15,30 @@
 
 using namespace std;
 
-void CollegeList::addCollege(std::string code, const std::string& name) {
+void CollegeList::addCollege(std::string code, const std::string& name) 
+{
     colleges[code] = name;
 }
 
-std::string CollegeList::getCollegeName(const std::string& code) const {
+std::string CollegeList::getCollegeName(const std::string& code) const 
+{
     auto iter = colleges.find(code);
-    if (iter != colleges.end()) {
+    if (iter != colleges.end()) 
+	{
         return iter->second;
     }
     return "";
 }
 
-void CollegeList::printColleges() const {
-    for (const auto& collegePair : colleges) {
+void CollegeList::printColleges() const 
+{
+    for (const auto& collegePair : colleges) 
+	{
         cout << "\t" << collegePair.first << " - " << collegePair.second << "\n";
 	}
 }
 
-const std::map<std::string, std::string>& CollegeList::getColleges() const {
+const std::map<std::string, std::string>& CollegeList::getColleges() const 
+{
     return colleges;
 }
