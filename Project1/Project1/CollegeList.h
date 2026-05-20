@@ -15,7 +15,8 @@
 #include <string>
 #include <map>
 
-class CollegeList {
+class CollegeList 
+{
     public:
         void addCollege(std::string code, const std::string& name);
 
