@@ -9,7 +9,6 @@
     College Donations
 */
 
-
 #ifndef COLLEGELIST_H
 #define COLLEGELIST_H
 
@@ -17,12 +16,15 @@
 #include <map>
 
 class CollegeList {
-public:
-    void addCollege(std::string code, const std::string& name);
-    std::string getCollegeName(const std::string& code) const;
-    void printColleges() const;
-    const std::map<std::string, std::string>& getColleges() const;
-private:
-    std::map<std::string, std::string> colleges;
+    public:
+        void addCollege(std::string code, const std::string& name);
+
+        std::string getCollegeName(const std::string& code) const;
+        const std::map<std::string, std::string>& getColleges() const;
+
+        void printColleges() const;
+    
+    private:
+        std::map<std::string, std::string> colleges;
 };
 #endif
