@@ -23,20 +23,20 @@ struct DonationNode {
 };
 
 class DonationList {
-public:
-	DonationList();
+	public:
+		DonationList();
 	
-	int addDonation(const Donation& donation);
+		void addDonation(const Donation& donation);
 	
-	int getNumOfDonations() const;
-	DonationNode* getFirst() const;
-	DonationNode* getLast() const;
+		int getNumOfDonations() const;
+		DonationNode* getFirst() const;
+		DonationNode* getLast() const;
 	
-	~DonationList();
+		~DonationList();
 
-private:
-	DonationNode* first;
-	DonationNode* last;
-	int numOfDonations;
+	private:
+		DonationNode* first;
+		DonationNode* last;
+		int numOfDonations;
 };
 #endif
