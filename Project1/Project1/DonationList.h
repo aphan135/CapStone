@@ -14,7 +14,8 @@
 
 #include "Donation.h"
 
-struct DonationNode {
+struct DonationNode 
+{
 	Donation data;
 	DonationNode* next;
 		
@@ -22,7 +23,8 @@ struct DonationNode {
 		: data(donation), next(nullptr) {}
 };
 
-class DonationList {
+class DonationList 
+{
 	public:
 		DonationList();
 	
