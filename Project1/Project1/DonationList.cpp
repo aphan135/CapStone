@@ -18,11 +18,13 @@ void DonationList::addDonation(const Donation& donation)
 {
     DonationNode* newNode = new DonationNode(donation);
 
-    if (first == nullptr) {
+    if (first == nullptr) 
+    {
         first = newNode;
         last = newNode;
     }
-    else {
+    else 
+    {
         last->next = newNode;
         last = newNode;
     }
@@ -49,7 +51,8 @@ DonationList::~DonationList()
 {
     DonationNode* current = first;
 
-    while (current != nullptr) {
+    while (current != nullptr) 
+    {
         DonationNode* temp = current;
         current = current->next;
         delete temp;
