@@ -21,8 +21,8 @@ using namespace std;
 // Definition of function displayMenu
 // Your code here…
 void displayMenu() {
-    cout << "\n============= DONATION MENU =============\n\n";
-	cout << "\t1. Add college \n"
+    cout << "\n============= DONATION MENU =============\n\n"
+	 << "\t1. Add college \n"
 	 << "\t2. Add donation \n"
 	 << "\t3. Print colleges \n"
 	 << "\t4. Print donations by college \n"
@@ -37,16 +37,17 @@ void displayMenu() {
 
 // Definition of function processUserChoices
 // Your code here...
-void processUserChoices(DonationManager& manager) {
-	displayMenu();
-	
+void processUserChoices(DonationManager& manager) {	
 	bool exit = false;
-	while (!exit) {
+	displayMenu();
+	while (!exit) 
+	{
 		int choice;
 		cout << "Enter your choice: ";
 		cin >> choice;
 		cout << endl;
-		switch (choice) {
+		switch (choice) 
+		{
 			case 1: {
 				string collegeCode, collegeName;
 				cout << "Enter college code: ";
@@ -60,7 +61,8 @@ void processUserChoices(DonationManager& manager) {
 				displayMenu();
 				break;
 			}
-			case 2: {
+			case 2: 
+			{
 				string donorName, collegeCode;
 				double amount;
 				cout << "Enter donor name: ";
@@ -78,56 +80,65 @@ void processUserChoices(DonationManager& manager) {
 				displayMenu();
 				break;
 			}
-			case 3:{				
+			case 3:
+			{				
 				manager.printColleges();
 				system("Pause");
 				displayMenu();
 				break;
 			}
 
-			case 4: {
+			case 4: 
+			{
 				manager.printDonationsByCollege();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 5: {
+			case 5: 
+			{
 				manager.printDonationsByDonor();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 6:{
+			case 6:
+			{
 				manager.printTotalsByCollege();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 7:{
+			case 7:
+			{
 				manager.printTotalsByDonor();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 8: {
+			case 8: 
+			{
 				manager.printStatistics();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 9: {
+			case 9: 
+			{
 				manager.printHighestDonor();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 10: {
+			case 10: 
+			{
 				manager.printCollegeWithHighestTotal();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 0:{
+			case 0:
+			{
 				cout << ">>>Logging out...\n\n";
 				exit = true;
 				break;

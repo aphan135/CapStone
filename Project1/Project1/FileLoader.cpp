@@ -47,7 +47,7 @@ void loadCollegesFromFile(const string& fileName,
     }
     else
     {
-        cout << "=> Could not open " << fileName << "." << endl;
+        cerr << "=> Could not open " << fileName << "." << endl;
     }
 }
 
@@ -79,6 +79,7 @@ void loadDonationsFromFile(const string& fileName,
             {
                 const double amount = stod(amountStr);
                 manager.addDonation(donorName, collegeCode, amount);
+				manager.addDonor(donorName);
             }
         }
 
@@ -87,6 +88,6 @@ void loadDonationsFromFile(const string& fileName,
     }
     else
     {
-        cout << "=> Could not open " << fileName << "." << endl;
+        cerr << "=> Could not open " << fileName << "." << endl;
     }
 }
