@@ -17,7 +17,7 @@
 class Donor {
 public:
 	Donor(const std::string& aDonorName, int aDonorID)
-		: donorName(aDonorName), donorId(aDonorID) {}
+		: donorName(aDonorName), donorID(aDonorID) {}
 
 	std::string getDonorName() const;
 	int getDonorID() const;
@@ -25,7 +25,7 @@ public:
 	bool operator<(const Donor& other) const;
 private:
 	std::string donorName;
-	int donorId;
+	int donorID;
 };
 
 #endif

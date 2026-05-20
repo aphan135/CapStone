@@ -41,5 +41,4 @@ void CollegeList::printColleges() const
     {
         cout << "\t" << iter.first << " - " << iter.second << endl;
 	}
-    cout << endl;
 }

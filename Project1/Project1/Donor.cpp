@@ -20,10 +20,10 @@ string Donor::getDonorName() const
 
 int Donor::getDonorID() const 
 {
-	return donorId;
+	return donorID;
 }
 
 bool Donor::operator<(const Donor& other) const 
 {
-	return donorId < other.donorId;
+	return donorID < other.donorID;
 }
