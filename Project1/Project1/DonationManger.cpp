@@ -61,7 +61,7 @@ void DonationManager::printDonationsByCollege() const
 	{
         cout << "\t" <<pair.first << " - " << pair.second << endl;
 
-        DonationNode* current = donations.getFirst();
+        const DonationNode* current = donations.getFirst();
         while (current != nullptr) 
 		{
             if (current->data.getCollegeCode() == pair.first) 
