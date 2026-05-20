@@ -16,11 +16,6 @@
 using namespace std;
 
 void CollegeList::addCollege(std::string code, const std::string& name) {
-    for (char &c : code) {
-        if (islower(c)) {
-            c = toupper(c);
-        }
-	}
     colleges[code] = name;
 }
 
@@ -33,10 +28,9 @@ std::string CollegeList::getCollegeName(const std::string& code) const {
 }
 
 void CollegeList::printColleges() const {
-    for (auto iter = colleges.begin(); iter != colleges.end(); ++iter) {
-        cout << "\t" << iter->first << " - " << iter->second << endl;
+    for (const auto& collegePair : colleges) {
+        cout << "\t" << collegePair.first << " - " << collegePair.second << "\n";
 	}
-    cout << endl;
 }
 
 const std::map<std::string, std::string>& CollegeList::getColleges() const {
