@@ -15,7 +15,6 @@
 #include <iomanip>
 #include <sstream>
 #include <vector>
-#include <cctype>
 
 using namespace std;
 
@@ -27,7 +26,7 @@ int DonationManager::addDonor(const string& donorName)
     return donorPerson.getDonorID();
 }
 
-void DonationManager::addCollege(string collegeCode, const string& collegeName) 
+void DonationManager::addCollege(const string& collegeCode, const string& collegeName) 
 {
     colleges.addCollege(collegeCode, collegeName);
 }
@@ -35,25 +34,11 @@ void DonationManager::addCollege(string collegeCode, const string& collegeName)
 void DonationManager::addDonation(const string& donorName, string collegeCode, double amount) 
 {
 	int donorID = addDonor(donorName);
-    for (char& c : collegeCode) 
-	{
-        if (islower(c)) 
-		{
-            c = toupper(c);
-        }
-    }
     Donation donorPerson(donorName, collegeCode, amount);
     donations.addDonation(donorPerson);
 }
 void DonatioManager::addDonation(const int donorID, std::string collegeCode, double amount)
 {
-	for (char& c : collegeCode) 
-	{
-        if (islower(c)) 
-		{
-            c = toupper(c);
-        }
-    }
 	auto iter = donors.begin();
     std::string donorName = "";
     bool found = false;
