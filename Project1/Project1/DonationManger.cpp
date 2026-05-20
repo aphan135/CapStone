@@ -45,7 +45,12 @@ void DonationManager::addDonation(const string& donorName, string collegeCode, d
 
 void DonationManager::printColleges() const 
 {
-    colleges.printColleges();
+	const auto& collegeMap = colleges.getColleges();
+    
+	for(const auto& pair: collegeMAP)
+		{
+			pair.first;
+		}
 }
 
 void DonationManager::printDonationsByCollege() const 
