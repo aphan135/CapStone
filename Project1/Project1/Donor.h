@@ -28,5 +28,4 @@ class Donor {
 		std::string donorName;
 		int donorId;
 };
-
 #endif
