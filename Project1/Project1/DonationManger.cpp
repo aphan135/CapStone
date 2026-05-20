@@ -120,9 +120,9 @@ void DonationManager::printTotalsByDonor() const
 
 void DonationManager::printStatistics() const 
 {
-    cout << "\tNumber of donors: " << donors.size() << endl;
-    cout << "\tNumber of colleges: " << colleges.getColleges().size() << endl;
-    cout << "\tNumber of donations: " << donations.getNumOfDonations() << "\n\n";
+    cout << "\tNumber of donors: " << donors.size() << "\n";
+    	 << "\tNumber of colleges: " << colleges.getColleges().size() << "\n";
+    	 << "\tNumber of donations: " << donations.getNumOfDonations() << "\n\n";
 }
 
 void DonationManager::printHighestDonor() const 
