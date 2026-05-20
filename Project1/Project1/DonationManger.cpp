@@ -37,7 +37,7 @@ void DonationManager::addDonation(const string& donorName, string collegeCode, d
     Donation donorPerson(donorName, collegeCode, amount);
     donations.addDonation(donorPerson);
 }
-void DonatioManager::addDonation(const int donorID, std::string collegeCode, double amount)
+void DonationManager::addDonation(const int donorID, std::string collegeCode, double amount)
 {
 	auto iter = donors.begin();
     std::string donorName = "";
