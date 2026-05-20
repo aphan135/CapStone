@@ -54,6 +54,28 @@ void DonatioManager::addDonation(const int donorID, std::string collegeCode, dou
             c = toupper(c);
         }
     }
+	auto iter = donors.begin();
+    std::string donorName = "";
+    bool found = false;
+
+    while (iter != donors.end() && !found) 
+	{
+        if (iter->getID() == donorID) 
+		{
+            donorName = iter->getName(); // Assuming your Donor class has getName()
+            found = true;
+        } 
+		else 
+		{
+            iter++;
+        }
+    }
+    if (found) 
+	{
+        Donation donorPerson(donorID, collegeCode, amount);
+        donations.addDonation(donorPerson);
+    }
+}
 void DonationManager::printColleges() const 
 {
 	const auto& collegeMap = colleges.getColleges();
