@@ -37,7 +37,8 @@ void displayMenu() {
 
 // Definition of function processUserChoices
 // Your code here...
-void processUserChoices(DonationManager& manager) {
+void processUserChoices(DonationManager& manager) 
+{
 	displayMenu();
 	
 	bool exit = false;
@@ -60,7 +61,8 @@ void processUserChoices(DonationManager& manager) {
 				displayMenu();
 				break;
 			}
-			case 2: {
+			case 2: 
+			{
 				string donorName, collegeCode;
 				double amount;
 				cout << "Enter donor name: ";
@@ -78,56 +80,65 @@ void processUserChoices(DonationManager& manager) {
 				displayMenu();
 				break;
 			}
-			case 3:{				
+			case 3:
+			{				
 				manager.printColleges();
 				system("Pause");
 				displayMenu();
 				break;
 			}
 
-			case 4: {
+			case 4: 
+			{
 				manager.printDonationsByCollege();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 5: {
+			case 5: 
+			{
 				manager.printDonationsByDonor();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 6:{
+			case 6:
+			{
 				manager.printTotalsByCollege();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 7:{
+			case 7:
+			{
 				manager.printTotalsByDonor();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 8: {
+			case 8: 
+			{
 				manager.printStatistics();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 9: {
+			case 9: 
+			{
 				manager.printHighestDonor();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 10: {
+			case 10: 
+			{
 				manager.printCollegeWithHighestTotal();
 				system("Pause");
 				displayMenu();
 				break;
 			}
-			case 0:{
+			case 0:
+			{
 				cout << ">>>Logging out...\n\n";
 				exit = true;
 				break;
