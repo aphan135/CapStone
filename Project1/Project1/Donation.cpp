@@ -11,15 +11,19 @@
 
 #include "Donation.h"
 
-#include <string>
 using namespace std;
 
-std::string Donation::getDonorName() const {
+string Donation::getDonorName() const 
+{
 	return donorName;
 }
-std::string Donation::getCollegeCode() const {
+
+string Donation::getCollegeCode() const 
+{
 	return collegeCode;
 }
-double Donation::getAmount() const {
+
+double Donation::getAmount() const 
+{
 	return amount;
 }

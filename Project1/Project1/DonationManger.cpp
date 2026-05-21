@@ -10,48 +10,80 @@
 */
 
 #include "DonationManager.h"
+
 #include <iostream>
 #include <iomanip>
 #include <sstream>
 #include <vector>
-#include <cctype>
 
 using namespace std;
 
-int DonationManager::addDonor(const string& donorName) {
+int DonationManager::addDonor(const string& donorName) 
+{
     Donor donorPerson(donorName, nextDonorID);
     donors.insert(donorPerson);
     nextDonorID = nextDonorID + 1;
     return donorPerson.getDonorID();
 }
 
-void DonationManager::addCollege(string collegeCode, const string& collegeName) {
+void DonationManager::addCollege(const string& collegeCode, const string& collegeName) 
+{
     colleges.addCollege(collegeCode, collegeName);
 }
 
-void DonationManager::addDonation(const string& donorName, string collegeCode, double amount) {
-    for (char& c : collegeCode) {
-        if (islower(c)) {
-            c = toupper(c);
-        }
-    }
+void DonationManager::addDonation(const string& donorName, string collegeCode, double amount) 
+{
+	int donorID = addDonor(donorName);
     Donation donorPerson(donorName, collegeCode, amount);
     donations.addDonation(donorPerson);
 }
+void DonationManager::addDonation(const int donorID, std::string collegeCode, double amount)
+{
+	auto iter = donors.begin();
+    std::string donorName = "";
+    bool found = false;
 
-void DonationManager::printColleges() const {
-    colleges.printColleges();
+    while (iter != donors.end() && !found) 
+	{
+        if (iter->getID() == donorID) 
+		{
+            donorName = iter->getName(); // Assuming your Donor class has getName()
+            found = true;
+        } 
+		else 
+		{
+            iter++;
+        }
+    }
+    if (found) 
+	{
+        Donation donorPerson(donorID, collegeCode, amount);
+        donations.addDonation(donorPerson);
+    }
+}
+void DonationManager::printColleges() const 
+{
+	const auto& collegeMap = colleges.getColleges();
+    
+	for(const auto& pair: collegeMap)
+		{
+			pair.first;
+		}
 }
 
-void DonationManager::printDonationsByCollege() const {
+void DonationManager::printDonationsByCollege() const 
+{
     const map<string, string>& collegeMap = colleges.getColleges();
 
-    for (const auto& pair : collegeMap) {
+    for (const auto& pair : collegeMap) 
+	{
         cout << "\t" <<pair.first << " - " << pair.second << endl;
 
-        DonationNode* current = donations.getFirst();
-        while (current != nullptr) {
-            if (current->data.getCollegeCode() == pair.first) {
+        const DonationNode* current = donations.getFirst();
+        while (current != nullptr) 
+		{
+            if (current->data.getCollegeCode() == pair.first) 
+			{
                 cout << "\t\t" << current->data.getDonorName() << " | Amount: $"
                     << current->data.getAmount() << endl;
             }
@@ -60,14 +92,18 @@ void DonationManager::printDonationsByCollege() const {
     }
 }
 
-void DonationManager::printDonationsByDonor() const {
+void DonationManager::printDonationsByDonor() const 
+{
     DonationNode* current = donations.getFirst();
 
-    while (current != nullptr) {
+    while (current != nullptr) 
+	{
         std::string donorName = current->data.getDonorName();
         int donorId = -1;
-        for (const auto& donor : donors) {
-            if (donor.getDonorName() == donorName) {
+        for (const auto& donor : donors) 
+		{
+            if (donor.getDonorName() == donorName) 
+			{
                 donorId = donor.getDonorID();
                 break;
             }
@@ -79,61 +115,82 @@ void DonationManager::printDonationsByDonor() const {
     }
 }
 
-void DonationManager::printTotalsByCollege() const {
+void DonationManager::printTotalsByCollege() const 
+{
     const map<string, string>& collegeMap = colleges.getColleges();
 
-    for (const auto& pair : collegeMap) {
+    for (const auto& pair : collegeMap) 
+	{
         cout << "\t" << pair.first << " - " << pair.second
             << "\n\t\tTotal donation amount: $" << getCollegeTotal(pair.first) << endl;
     }
 }
 
-void DonationManager::printTotalsByDonor() const {
-    for (const auto& donor : donors) {
+void DonationManager::printTotalsByDonor() const 
+{
+    for (const auto& donor : donors) 
+	{
         cout << "(ID " << donor.getDonorID() << ") " 
              << donor.getDonorName() << " | $" 
              << getDonorTotal(donor.getDonorName()) << endl;
     }
 }
 
-void DonationManager::printStatistics() const {
-    cout << "\tNumber of donors: " << donors.size() << endl;
-    cout << "\tNumber of colleges: " << colleges.getColleges().size() << endl;
-    cout << "\tNumber of donations: " << donations.getNumOfDonations() << "\n\n";
+void DonationManager::printStatistics() const 
+{
+    cout << "\tNumber of donors: " << donors.size() << "\n";
+    	 << "\tNumber of colleges: " << colleges.getColleges().size() << "\n";
+    	 << "\tNumber of donations: " << donations.getNumOfDonations() << "\n\n";
 }
 
-void DonationManager::printHighestDonor() const {
-    double bestAmount = -1;
-    for (const auto& donor : donors) {
+void DonationManager::printHighestDonor() const
+{
+    double bestAmount = -1.0;
+    std::vector<std::string> highestDonors;
+    highestDonors.reserve(donors.size());
+    for (const auto& donor : donors)
+    {
         double total = getDonorTotal(donor.getDonorName());
-        if (total > bestAmount) {
+        if (total > bestAmount)
+        {
             bestAmount = total;
+            highestDonors.clear();
+            highestDonors.push_back(donor.getDonorName());
+        }
+        else if (total == bestAmount && bestAmount > 0)
+        {
+            highestDonors.push_back(donor.getDonorName());
         }
     }
 
     cout << "Highest donor(s):\n";
-    for (const auto& donor : donors) {
-        if (getDonorTotal(donor.getDonorName()) == bestAmount) {
-            cout << "\t" << donor.getDonorName() << "\n";
-        }
+    for (const auto& name : highestDonors)
+    {
+        cout << "\t" << name << "\n";
     }
     cout << "\tHighest amount donated: $" << bestAmount << endl;
 }
 
-void DonationManager::printCollegeWithHighestTotal() const {
+void DonationManager::printCollegeWithHighestTotal() const 
+{
     const map<string, string>& collegeMap = colleges.getColleges();
 
-    vector<string> bestCollege;
-    vector<string> bestCollegeCode;
-    double bestAmount = -1;
+    vector<string> highestColleges;
+	highestColleges.reverse(collegeMap.size());
 
-    for (const auto& pair : collegeMap) {
+    double bestAmount = -1.0;
+
+    for (const auto& pair : collegeMap) 
+	{
         double total = getCollegeTotal(pair.first);
-        if (total == bestAmount) {
+        if (total == bestAmount) 
+		{
             bestAmount = total;
             bestCollege.push_back(pair.first);
             bestCollegeCode.push_back(pair.second);
-        } else if (total > bestAmount) {
+        } 
+		else if (total > bestAmount) 
+		{
             bestCollege.clear();
             bestCollegeCode.clear();
             bestAmount = total;
@@ -149,11 +206,13 @@ void DonationManager::printCollegeWithHighestTotal() const {
     cout << "\t\tHighest total received: $" << bestAmount << "\n\n";
 }
 
-double DonationManager::getDonorTotal(const string& donorName) const {
+double DonationManager::getDonorTotal(const string& donorName) const 
+{
     DonationNode* current = donations.getFirst();
     double total = 0;
     while (current != nullptr) {
-        if (current->data.getDonorName() == donorName) {
+        if (current->data.getDonorName() == donorName) 
+		{
             total = total + current->data.getAmount();
         }
         current = current->next;
@@ -161,12 +220,15 @@ double DonationManager::getDonorTotal(const string& donorName) const {
     return total;
 }
 
-double DonationManager::getCollegeTotal(const string& collegeCode) const {
+double DonationManager::getCollegeTotal(const string& collegeCode) const 
+{
     DonationNode* current = donations.getFirst();
     double total = 0;
 
-    while (current != nullptr) {
-        if (current->data.getCollegeCode() == collegeCode) {
+    while (current != nullptr) 
+	{
+        if (current->data.getCollegeCode() == collegeCode) 
+		{
             total = total + current->data.getAmount();
         }
         current = current->next;

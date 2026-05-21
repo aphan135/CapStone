@@ -13,9 +13,9 @@
 #define DONATIONLIST_H
 
 #include "Donation.h"
-#include <string>
 
-struct DonationNode {
+struct DonationNode 
+{
 	Donation data;
 	DonationNode* next;
 		
@@ -23,22 +23,22 @@ struct DonationNode {
 		: data(donation), next(nullptr) {}
 };
 
-class DonationList {
-public:
-	DonationList();
-	int addDonation(const Donation& donation);
-	int getNumOfDonations() const;
+class DonationList 
+{
+	public:
+		DonationList();
 	
-	//Getters
-	DonationNode* getFirst() const;
-	DonationNode* getLast() const;
+		void addDonation(const Donation& donation);
 	
-	~DonationList();
+		int getNumOfDonations() const;
+		DonationNode* getFirst() const;
+		DonationNode* getLast() const;
+	
+		~DonationList();
 
-private:
-	DonationNode* first;
-	DonationNode* last;
-	int numOfDonations;
+	private:
+		DonationNode* first;
+		DonationNode* last;
+		int numOfDonations;
 };
-
 #endif

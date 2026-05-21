@@ -9,7 +9,6 @@
     College Donations
 */
 
-
 #ifndef COLLEGELIST_H
 #define COLLEGELIST_H
 

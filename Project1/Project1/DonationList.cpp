@@ -11,44 +11,48 @@
 
 #include "DonationList.h"
 
-using namespace std;
-
 DonationList::DonationList()
-    : first(nullptr), last(nullptr), numOfDonations(0) {
-}
+    : first(nullptr), last(nullptr), numOfDonations(0) {}
 
-int DonationList::addDonation(const Donation& donation) {
+void DonationList::addDonation(const Donation& donation) 
+{
     DonationNode* newNode = new DonationNode(donation);
 
-    if (first == nullptr) {
+    if (first == nullptr) 
+    {
         first = newNode;
         last = newNode;
     }
-    else {
+    else 
+    {
         last->next = newNode;
         last = newNode;
     }
 
     numOfDonations = numOfDonations + 1;
+}
+
+int DonationList::getNumOfDonations() const 
+{
     return numOfDonations;
 }
 
-int DonationList::getNumOfDonations() const {
-    return numOfDonations;
-}
-
-DonationNode* DonationList::getFirst() const {
+DonationNode* DonationList::getFirst() const 
+{
     return first;
 }
 
-DonationNode* DonationList::getLast() const {
+DonationNode* DonationList::getLast() const 
+{
     return last;
 }
 
-DonationList::~DonationList() {
+DonationList::~DonationList() 
+{
     DonationNode* current = first;
 
-    while (current != nullptr) {
+    while (current != nullptr) 
+    {
         DonationNode* temp = current;
         current = current->next;
         delete temp;
@@ -56,5 +60,4 @@ DonationList::~DonationList() {
 
     first = nullptr;
     last = nullptr;
-    numOfDonations = 0;
 }
