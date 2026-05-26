@@ -65,11 +65,11 @@ void processUserChoices(DonationManager& manager) {
 			{
 				string donorName, collegeCode;
 				double amount;
-				cout << "Enter donor name: ";
+				cout << "Enter new donor name: ";
 				cin.ignore();
 				getline(cin, donorName);
 				int newID = manager.addDonor(donorName);
-				cout << "\n\t >>> New Donor ID: " << newID << endl;
+				cout << "\n\t >>> New donor ID: " << newID << endl;
 				cout << "\nEnter college code: ";
 				cin >> collegeCode;
 				cout << "Enter donation amount: ";
@@ -83,6 +83,7 @@ void processUserChoices(DonationManager& manager) {
 			case 3:
 			{				
 				manager.printColleges();
+				cout << endl;
 				system("Pause");
 				displayMenu();
 				break;
@@ -91,6 +92,7 @@ void processUserChoices(DonationManager& manager) {
 			case 4: 
 			{
 				manager.printDonationsByCollege();
+				cout << endl;
 				system("Pause");
 				displayMenu();
 				break;
@@ -98,6 +100,7 @@ void processUserChoices(DonationManager& manager) {
 			case 5: 
 			{
 				manager.printDonationsByDonor();
+				cout << endl;
 				system("Pause");
 				displayMenu();
 				break;
@@ -105,6 +108,7 @@ void processUserChoices(DonationManager& manager) {
 			case 6:
 			{
 				manager.printTotalsByCollege();
+				cout << endl;
 				system("Pause");
 				displayMenu();
 				break;
@@ -112,6 +116,7 @@ void processUserChoices(DonationManager& manager) {
 			case 7:
 			{
 				manager.printTotalsByDonor();
+				cout << endl;
 				system("Pause");
 				displayMenu();
 				break;
@@ -119,6 +124,7 @@ void processUserChoices(DonationManager& manager) {
 			case 8: 
 			{
 				manager.printStatistics();
+				cout << endl;
 				system("Pause");
 				displayMenu();
 				break;
@@ -126,6 +132,7 @@ void processUserChoices(DonationManager& manager) {
 			case 9: 
 			{
 				manager.printHighestDonor();
+				cout << endl;
 				system("Pause");
 				displayMenu();
 				break;
@@ -133,13 +140,14 @@ void processUserChoices(DonationManager& manager) {
 			case 10: 
 			{
 				manager.printCollegeWithHighestTotal();
+				cout << endl;
 				system("Pause");
 				displayMenu();
 				break;
 			}
 			case 0:
 			{
-				cout << ">>>Logging out...\n\n";
+				cout << "\t>>>Logging out..." << endl;
 				exit = true;
 				break;
 			default:

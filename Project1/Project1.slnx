@@ -9,8 +9,6 @@
     <File Path="Project1/DonationList.cpp" />
     <File Path="Project1/DonationList.h" />
     <File Path="Project1/DonationManager.h" />
-    <File Path="Project1/DonationManger.cpp" />
-    <File Path="Project1/FileLoader.h" />
   </Folder>
-  <Project Path="Project1/Project1.vcxproj" Id="841acac6-722a-40b0-8745-1b9e5aece5e7" />
+  <Project Path="Project1/Project1.vcxproj" Id="5c2fbad9-3b4a-4295-a576-e7971c24a507" />
 </Solution>

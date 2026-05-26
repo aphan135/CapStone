@@ -18,7 +18,7 @@
     <ClCompile Include="Donor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FileLoader.cpp">
@@ -30,11 +30,45 @@
     <ClCompile Include="DonationList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DonationManger.cpp">
+    <ClCompile Include="DonationManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Donation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Donor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DonationManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CollegeList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Donation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DonationList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="colleges.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="donations.csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

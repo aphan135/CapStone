@@ -47,7 +47,7 @@ void loadCollegesFromFile(const string& fileName,
     }
     else
     {
-        cerr << "=> Could not open " << fileName << "." << endl;
+        cerr << "=> Could not open colleges.csv." << endl;
     }
 }
 
@@ -79,7 +79,6 @@ void loadDonationsFromFile(const string& fileName,
             {
                 const double amount = stod(amountStr);
                 manager.addDonation(donorName, collegeCode, amount);
-				manager.addDonor(donorName);
             }
         }
 
@@ -88,6 +87,6 @@ void loadDonationsFromFile(const string& fileName,
     }
     else
     {
-        cerr << "=> Could not open " << fileName << "." << endl;
+        cerr << "=> Could not open donations.csv." << endl;
     }
 }

@@ -19,10 +19,11 @@ public:
 	Donor(const std::string& aDonorName, int aDonorID)
 		: donorName(aDonorName), donorID(aDonorID) {}
 
-		std::string getDonorName() const;
-		int getDonorID() const;
+	std::string getDonorName() const;
+	int getDonorID() const;
 
 	bool operator<(const Donor& other) const;
+	
 private:
 	std::string donorName;
 	int donorID;
