@@ -53,22 +53,18 @@ void DonationManager::addDonation(const int donorID,
 {
     auto iter = donors.begin();
     std::string donorName = "";
-    bool found = false;
 
-    while (!found)
+    while (iter != donors.end())
     {
         if (iter->getDonorID() == donorID)
         {
             donorName = iter->getDonorName();
-            found = true;
         }
-        else
-        {
-            iter++;
-        }
+        iter++;
     }
-        Donation donorPerson(donorName, collegeCode, amount);
-        donations.addDonation(donorPerson);
+    Donation donorPerson(donorName, collegeCode, amount);
+    donations.addDonation(donorPerson);
+
 }
 void DonationManager::printColleges() const
 {
