@@ -59,11 +59,9 @@ void DonationManager::addDonation(const int donorID, const std::string& collegeC
         }
         iter++;
     }
-    if (found)
-    {
-        Donation donorPerson(donorName, collegeCode, amount);
-        donations.addDonation(donorPerson);
-    }
+    Donation donorPerson(donorName, collegeCode, amount);
+    donations.addDonation(donorPerson);
+
 }
 void DonationManager::printColleges() const
 {
