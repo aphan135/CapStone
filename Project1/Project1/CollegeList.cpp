@@ -15,7 +15,8 @@
 
 using namespace std;
 
-void CollegeList::addCollege(const std::string& code, const std::string& name) 
+void CollegeList::addCollege(const std::string& code, 
+                             const std::string& name)
 {
     colleges[code] = name;
 }
@@ -23,11 +24,7 @@ void CollegeList::addCollege(const std::string& code, const std::string& name)
 std::string CollegeList::getCollegeName(const std::string& code) const 
 {
     auto iter = colleges.find(code);
-    if (iter != colleges.end()) 
-    {
-        return iter->second;
-    }
-    return "";
+    return iter->second;
 }
 
 const std::map<std::string, std::string>& CollegeList::getColleges() const 
