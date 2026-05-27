@@ -48,14 +48,12 @@ void DonationManager::addDonation(const int donorID, const std::string& collegeC
 {
     auto iter = donors.begin();
     std::string donorName = "";
-    bool found = false;
 
-    while (iter != donors.end() && !found)
+    while (iter != donors.end())
     {
         if (iter->getDonorID() == donorID)
         {
             donorName = iter->getDonorName();
-            found = true;
         }
         iter++;
     }
