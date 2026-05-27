@@ -57,10 +57,7 @@ void DonationManager::addDonation(const int donorID, const std::string& collegeC
             donorName = iter->getDonorName();
             found = true;
         }
-        else
-        {
-            iter++;
-        }
+        iter++;
     }
     if (found)
     {
