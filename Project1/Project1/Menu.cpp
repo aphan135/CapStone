@@ -40,119 +40,99 @@ void displayMenu() {
 void processUserChoices(DonationManager& manager) {	
 	bool exit = false;
 	displayMenu();
-	while (!exit) 
+	while (!exit)
 	{
 		int choice;
 		cout << "Enter your choice: ";
 		cin >> choice;
 		cout << endl;
-		switch (choice) 
+		if (choice == 1) 
 		{
-			case 1: {
-				string collegeCode, collegeName;
-				cout << "Enter college code: ";
-				cin >> collegeCode;
-				cout << "Enter college name: ";
-				cin.ignore();
-				getline(cin, collegeName);
-				manager.addCollege(collegeCode, collegeName);
-				cout << "\n\t >>> College added.\n\n";
-				system("Pause");
-				displayMenu();
-				break;
-			}
-			case 2: 
-			{
-				string donorName, collegeCode;
-				double amount;
-				cout << "Enter new donor name: ";
-				cin.ignore();
-				getline(cin, donorName);
-				int newID = manager.addDonor(donorName);
-				cout << "\n\t >>> New donor ID: " << newID << endl;
-				cout << "\nEnter college code: ";
-				cin >> collegeCode;
-				cout << "Enter donation amount: ";
-				cin >> amount;
-				manager.addDonation(donorName, collegeCode, amount);
-				cout << "\n\t >>> Donation added.\n\n";
-				system("Pause");
-				displayMenu();
-				break;
-			}
-			case 3:
-			{				
-				manager.printColleges();
-				cout << endl;
-				system("Pause");
-				displayMenu();
-				break;
-			}
+			string collegeCode, collegeName;
 
-			case 4: 
-			{
-				manager.printDonationsByCollege();
-				cout << endl;
-				system("Pause");
-				displayMenu();
-				break;
-			}
-			case 5: 
-			{
-				manager.printDonationsByDonor();
-				cout << endl;
-				system("Pause");
-				displayMenu();
-				break;
-			}
-			case 6:
-			{
-				manager.printTotalsByCollege();
-				cout << endl;
-				system("Pause");
-				displayMenu();
-				break;
-			}
-			case 7:
-			{
-				manager.printTotalsByDonor();
-				cout << endl;
-				system("Pause");
-				displayMenu();
-				break;
-			}
-			case 8: 
-			{
-				manager.printStatistics();
-				cout << endl;
-				system("Pause");
-				displayMenu();
-				break;
-			}
-			case 9: 
-			{
-				manager.printHighestDonor();
-				cout << endl;
-				system("Pause");
-				displayMenu();
-				break;
-			}
-			case 10: 
-			{
-				manager.printCollegeWithHighestTotal();
-				cout << endl;
-				system("Pause");
-				displayMenu();
-				break;
-			}
-			case 0:
-			{
-				cout << "\t>>>Logging out..." << endl;
-				exit = true;
-				break;
-			default:
-				cout << "Invalid choice. Please try again.\n";
-			}
+			cout << "Enter college code: ";
+			cin >> collegeCode;
+
+			cout << "Enter college name: ";
+			cin.ignore();
+			getline(cin, collegeName);
+
+			manager.addCollege(collegeCode, collegeName);
+			cout << "\n\t >>> College added.\n\n";
 		}
+		else if (choice == 2) 
+		{
+			string donorName, collegeCode;
+			double amount;
+
+			cout << "Enter new donor name: ";
+			cin.ignore();
+			getline(cin, donorName);
+
+			int newID = manager.addDonor(donorName);
+
+			cout << "\n\t >>> New donor ID: " << newID << endl;
+			cout << "\nEnter college code: ";
+			cin >> collegeCode;
+
+			cout << "Enter donation amount: ";
+			cin >> amount;
+
+			manager.addDonation(donorName, collegeCode, amount);
+			cout << "\n\t >>> Donation added.\n\n";
+
+		}
+		else if (choice == 3) 
+		{
+			manager.printColleges();
+			cout << endl;
+		}
+		else if (choice == 4) 
+		{
+			manager.printDonationsByCollege();
+			cout << endl;
+		}
+		else if (choice == 5) 
+		{
+			manager.printDonationsByDonor();
+			cout << endl;
+		}
+		else if (choice == 6) 
+		{
+			manager.printTotalsByCollege();
+			cout << endl;
+		}
+		else if (choice == 7) 
+		{
+			manager.printTotalsByDonor();
+			cout << endl;
+		}
+		else if (choice == 8) 
+		{
+			manager.printStatistics();
+			cout << endl;
+		}
+		else if (choice == 9) 
+		{
+			manager.printHighestDonor();
+			cout << endl;
+		}
+		else if (choice == 10) 
+		{
+			manager.printCollegeWithHighestTotal();
+			cout << endl;
+		}
+		else if (choice == 0)
+		{
+			cout << "\t>>>Logging out..." << endl;
+			exit = true;
+			break;
+		}
+		else 
+		{
+			cout << "Invalid choice. Please try again.\n";
+		}
+		system("pause");
+		displayMenu();
 	}
 }

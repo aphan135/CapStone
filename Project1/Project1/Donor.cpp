@@ -23,7 +23,7 @@ int Donor::getDonorID() const
 	return donorID;
 }
 
-bool Donor::operator<(const Donor& other) const 
+bool Donor::operator<(const Donor& otherDonor) const 
 {
-	return donorID < other.donorID;
+	return donorID < otherDonor.donorID;
 }

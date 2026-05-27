@@ -9,10 +9,6 @@
     College Donations
 */
 
-#include "Donor.h"
-#include "CollegeList.h"
-#include "Donation.h"
-#include "DonationList.h"
 #include "DonationManager.h"
 #include "FileLoader.h"
 #include "Menu.h"

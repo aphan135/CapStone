@@ -75,10 +75,12 @@ void loadDonationsFromFile(const string& fileName,
             getline(iss, collegeCode, ',');
             getline(iss, amountStr, ',');
 
-            if (!donorName.empty() && !collegeCode.empty() && !amountStr.empty())
+            if (!donorName.empty() 
+                && !collegeCode.empty()
+                && !amountStr.empty())
             {
-                const double amount = stod(amountStr);
-                manager.addDonation(donorName, collegeCode, amount);
+                const double CONST_AMOUNT = stod(amountStr);
+                manager.addDonation(donorName, collegeCode, CONST_AMOUNT);
             }
         }
 
